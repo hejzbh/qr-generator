@@ -1,7 +1,8 @@
 // React router dom
 import { Routes, Route } from "react-router-dom";
 // Pages - Components
-import { Create as CreatePage } from "./pages/Create";
+import { Create as CreatePage } from "./pages/create/index";
+import { Informations as InformationsPage } from "./pages/create/Informations";
 import { Home as HomePage } from "./pages/Home";
 // Redux
 //import { useDispatch, useSelector } from "react-redux";
@@ -13,7 +14,10 @@ function App() {
     <div className="min-h-screen bg-gray-200 flex justify-center items-center">
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/create" element={<CreatePage />} />
+
+        <Route path="/create" element={<CreatePage />}>
+          <Route path="informations" element={<InformationsPage />} />
+        </Route>
       </Routes>
     </div>
   );
